@@ -7,7 +7,11 @@
 # The directory Mix downloads your dependencies sources to.
 /deps/
 
+<<<<<<< HEAD
 # Where 3rd-party dependencies like ExDoc output generated docs.
+=======
+# Where third-party dependencies like ExDoc output generated docs.
+>>>>>>> d1228710390ee9d871a7b31e8e458a4b334c7790
 /doc/
 
 # Ignore .fetch files in case you like to edit your project deps locally.
@@ -19,6 +23,7 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
+<<<<<<< HEAD
 # Temporary files, for example, from tests.
 /tmp/
 
@@ -35,3 +40,16 @@ benchee-*.tar
 npm-debug.log
 /assets/node_modules/
 
+=======
+# Ignore package tarball (built via "mix hex.build").
+benchee-*.tar
+
+# Temporary files for e.g. tests.
+/tmp/
+
+# Misc.
+save.benchee
+/test/tmp/
+/tools/plts/benchee.plt
+/tools/plts/benchee.plt.hash
+>>>>>>> d1228710390ee9d871a7b31e8e458a4b334c7790
