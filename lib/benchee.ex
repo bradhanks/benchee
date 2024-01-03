@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-defmodule Benchee do
-  def start do
-    map = Map.new(1..10_000, &{&1, &1})
-    all_keys = Map.keys(map)
-
-    Benchee.run(
-      %{
-        "fetch (for)" => fn keys -> for key <- keys, do: Map.fetch(map, key) end,
-        "fetch (Enum.map)" => fn keys -> Enum.map(keys, &Map.fetch(map, &1)) end,
-        "fetch! (for)" => fn keys -> for key <- keys, do: Map.fetch!(map, key) end,
-        "fetch! (Enum.map)" => fn keys -> Enum.map(keys, &Map.fetch!(map, &1)) end,
-        "get (for)" => fn keys -> for key <- keys, do: Map.get(map, key) end,
-        "get (Enum.map)" => fn keys -> Enum.map(keys, &Map.get(map, &1)) end,
-        "take" => fn keys -> Map.take(map, keys) end
-      },
-      inputs: %{
-        "1" => Enum.take_random(all_keys, 1),
-        "10" => Enum.take_random(all_keys, 10),
-        "100" => Enum.take_random(all_keys, 100),
-        "1000" => Enum.take_random(all_keys, 1000)
-      }
-    )
-=======
 # Idea from this:
 # credo:disable-for-next-line
 # https://github.com/bencheeorg/benchee/commit/b3ddbc132e641cdf1eec0928b322ced1dab8553f#commitcomment-23381474
@@ -129,6 +105,5 @@ for {module, moduledoc} <- [{Benchee, elixir_doc}, {:benchee, erlang_doc}] do
     defdelegate relative_statistics(suite), to: Benchee.RelativeStatistics
     defdelegate load(suite), to: Benchee.ScenarioLoader
     defdelegate profile(suite), to: Benchee.Profile
->>>>>>> d1228710390ee9d871a7b31e8e458a4b334c7790
   end
 end
